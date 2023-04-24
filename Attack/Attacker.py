@@ -1,5 +1,6 @@
 from abc import ABCMeta
 from abc import abstractmethod
+from .. import GlobalConfig
 
 
 class Attacker():
@@ -8,6 +9,11 @@ class Attacker():
         self.model = model
 
     @abstractmethod
-    def attack(self):
-        print("Attack method not implemented")
+    def Attack(self):
+        print("Attacker::Attack method not implemented")
+        raise NotImplementedError
+    
+    @abstractmethod
+    def AttackBatch(self):
+        print("Attacker::AttackBatch method not implemented")
         raise NotImplementedError
