@@ -1,19 +1,21 @@
 from abc import ABCMeta
 from abc import abstractmethod
-from .. import GlobalConfig
+import logging
 
 
 class Attacker():
 
-    def __init__(self, model):
+    def __init__(self, model=None,name=None,device=None):
         self.model = model
+        self.name = name
+        self.device = device
 
     @abstractmethod
     def Attack(self):
-        print("Attacker::Attack method not implemented")
+        logging.warn(f"{self.name} attack method not implemented")
         raise NotImplementedError
     
-    @abstractmethod
-    def AttackBatch(self):
-        print("Attacker::AttackBatch method not implemented")
-        raise NotImplementedError
+    # @abstractmethod
+    # def AttackBatch(self):
+    #     logging.warn(f"{self.name} attack method not implemented")
+    #     raise NotImplementedError
