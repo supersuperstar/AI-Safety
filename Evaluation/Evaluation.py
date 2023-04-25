@@ -6,7 +6,7 @@ import logging
 
 
 class Evaluation():
-    
+
     loggerEvaluate = logging.getLogger('Evaluation')
 
     @staticmethod
@@ -19,20 +19,13 @@ class Evaluation():
         Returns:
             _type_: True if method exists, False otherwise
         """
-        flag = method in globals() and issubclass(globals()[method],
-                                                  Evaluation)
+        flag = method in globals() and issubclass(globals()[method], Evaluation)
         if flag is False:
             logging.warning(f'{method} method does not exist')
         return flag
 
-    def __init__(self,
-                 model=None,
-                 name=None,
-                 device=None,
-                 myLogger=loggerEvaluate,
-                 myLoggerLevel=LOGGING_LEVEL_DEBUG,
-                 myLoggerFormat=LOGGING_FORMAT,
-                 myLoggerPath=FILENAME_DEFAULT_LOG):
+    def __init__(self, name, model=None, device=None, myLogger=loggerEvaluate, myLoggerLevel=LOGGING_LEVEL_DEBUG,
+                 myLoggerFormat=LOGGING_FORMAT, myLoggerPath=FILENAME_DEFAULT_LOG):
         """Initialize the attack method
 
         Args:

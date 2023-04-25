@@ -6,7 +6,7 @@ import logging
 
 
 class Defender():
-    
+
     loggerDefender = logging.getLogger('Defender')
 
     @staticmethod
@@ -24,14 +24,8 @@ class Defender():
             logging.warning(f'{method} method does not exist')
         return flag
 
-    def __init__(self,
-                 model=None,
-                 name=None,
-                 device=None,
-                 myLogger=loggerDefender,
-                 myLoggerLevel=LOGGING_LEVEL_DEBUG,
-                 myLoggerFormat=LOGGING_FORMAT,
-                 myLoggerPath=FILENAME_DEFAULT_LOG):
+    def __init__(self, name, model=None, device=None, myLogger=loggerDefender, myLoggerLevel=LOGGING_LEVEL_DEBUG,
+                 myLoggerFormat=LOGGING_FORMAT, myLoggerPath=FILENAME_DEFAULT_LOG):
         """Initialize the attack method
 
         Args:
