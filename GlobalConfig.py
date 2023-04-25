@@ -1,7 +1,7 @@
 import os
 import logging
 ##################################################
-##### 路径
+##### 路径和文件名
 #总目录
 PATH_PROJECT = os.path.dirname(os.path.abspath(__file__))
 #攻击方法目录
@@ -10,6 +10,8 @@ PATH_ATTACK_METHOD = PATH_PROJECT + "Attack/"
 PATH_DEFENSE_METHOD = PATH_PROJECT + "Defense/"
 #评估方法目录
 PATH_EVALUATION_METHOD = PATH_PROJECT + "Evaluation/"
+#日志目录
+PATH_LOG = PATH_PROJECT + "Log/"
 #模型存放目录
 PATH_MODEL = PATH_PROJECT + "Model/"
 #配置存放目录
@@ -20,7 +22,8 @@ PATH_MODEL_CHECKPOINT = PATH_MODEL + "Checkpoint/"
 PATH_MODEL_TYPE = PATH_MODEL + "ModelType/"
 #用户模型定义存放目录
 PATH_USER_MODEL = PATH_MODEL + "UserModel/"
-
+#默认日志文件名
+FILENAME_DEFAULT_LOG="DefaultLog.txt"
 ##################################################
 
 ##################################################
