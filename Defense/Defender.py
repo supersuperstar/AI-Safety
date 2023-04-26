@@ -10,7 +10,7 @@ class Defender():
     loggerDefender = logging.getLogger('Defender')
 
     @staticmethod
-    def Has(method: str = None):
+    def has(method: str = None):
         """Check if a sub method exists
             检查是否有这种防御方式
         Args:
@@ -45,7 +45,7 @@ class Defender():
         #不是默认日志配置，新建独立日志配置
         if not (not self.logger.handlers and self.logger.parent.handlers):
             self.logHandler = logging.StreamHandler()
-            CheckDir(myLoggerPath, True)
+            checkDir(myLoggerPath, True)
             self.fileHandler = logging.FileHandler(PATH_LOG + myLoggerPath)
             self.logHandler.setFormatter(myLoggerFormat)
             self.logHandler.setLevel(myLoggerLevel)
@@ -54,6 +54,6 @@ class Defender():
         self.logger.debug(f"Defender {self.name} initialized")
 
     @abstractmethod
-    def Defend(self):
+    def defend(self):
         logging.warning(f"{self.name} defense method not implemented")
         raise NotImplementedError

@@ -24,6 +24,13 @@ PATH_MODEL_TYPE = PATH_MODEL + "ModelType/"
 PATH_USER_MODEL = PATH_MODEL + "UserModel/"
 #默认日志文件名
 FILENAME_DEFAULT_LOG="DefaultLog.txt"
+#包名
+MODEL_ATTACK="Attack."
+MODEL_DEFENSE="Defense."
+MODEL_EVALUATION="Evaluation."
+MODEL_MODEL="Model."
+MODEL_MODEL_TYPE="Model.ModelType."
+MODEL_DATA_SET="DataSet."
 ##################################################
 
 ##################################################

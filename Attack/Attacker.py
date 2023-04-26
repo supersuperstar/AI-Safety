@@ -10,7 +10,7 @@ class Attacker(metaclass=ABCMeta):
     loggerAttack = logging.getLogger("Attacker")
 
     @staticmethod
-    def Has(method: str = None):
+    def has(method: str = None):
         """Check if a sub method exists
             检查是否有这种攻击方式
         Args:
@@ -45,7 +45,7 @@ class Attacker(metaclass=ABCMeta):
         #不是默认日志配置，新建独立日志配置
         if not (not self.logger.handlers and self.logger.parent.handlers):
             self.logHandler = logging.StreamHandler()
-            CheckDir(myLoggerPath, True)
+            checkDir(myLoggerPath, True)
             self.fileHandler = logging.FileHandler(PATH_LOG + myLoggerPath)
             self.logHandler.setFormatter(myLoggerFormat)
             self.logHandler.setLevel(myLoggerLevel)
@@ -54,7 +54,7 @@ class Attacker(metaclass=ABCMeta):
         self.logger.debug(f"Attacker {self.name} initialized")
 
     @abstractmethod
-    def Attack(self):
+    def attack(self):
         self.logger.warning(f"{self.name} attack method not implemented")
         raise NotImplementedError
 

@@ -10,7 +10,7 @@ class Evaluation():
     loggerEvaluate = logging.getLogger('Evaluation')
 
     @staticmethod
-    def Has(method: str = None):
+    def has(method: str = None):
         """Check if a sub method exists
             检查是否有这种评估方式
         Args:
@@ -45,7 +45,7 @@ class Evaluation():
         #不是默认日志配置，新建独立日志配置
         if not (not self.logger.handlers and self.logger.parent.handlers):
             self.logHandler = logging.StreamHandler()
-            CheckDir(myLoggerPath, True)
+            checkDir(myLoggerPath, True)
             self.fileHandler = logging.FileHandler(PATH_LOG + myLoggerPath)
             self.logHandler.setFormatter(myLoggerFormat)
             self.logHandler.setLevel(myLoggerLevel)
@@ -54,6 +54,6 @@ class Evaluation():
         self.logger.debug(f"Evaluation metrics {self.name} initialized")
 
     @abstractmethod
-    def Evaluate(self):
+    def evaluate(self):
         logging.warning(f"{self.name} evaluating method not implemented")
         raise NotImplementedError

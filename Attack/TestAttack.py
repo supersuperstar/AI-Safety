@@ -10,5 +10,5 @@ class TestAttack(Attacker):
                  myLoggerFormat=LOGGING_FORMAT, myLoggerPath=FILENAME_DEFAULT_LOG):
         super(TestAttack, self).__init__(name, model, device, myLogger, myLoggerLevel, myLoggerFormat, myLoggerPath)
 
-    def Attack(self):
+    def attack(self):
         self.logger.info("this is a test attack")

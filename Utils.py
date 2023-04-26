@@ -2,10 +2,12 @@ import os
 import numpy as np
 import torch
 import logging
+import importlib
 from GlobalConfig import *
 
+
 #检查目录是否存在并创建（可选）
-def CheckDir(dir:str=PATH_PROJECT,create:bool=False)->bool:
+def checkDir(dir: str = PATH_PROJECT, create: bool = False) -> bool:
     """_summary_
     check if a directory exists and create it 
     Args:
@@ -25,3 +27,20 @@ def CheckDir(dir:str=PATH_PROJECT,create:bool=False)->bool:
         return False
     return True
 
+
+#check if a class is in a module
+def classExistsInModel(module_name, class_name):
+    """check if a class exists in a module
+
+    Args:
+        module_name (_type_): 
+        class_name (_type_): 
+
+    Returns:
+        _type_: boolean
+    """
+    try:
+        module = importlib.import_module(module_name)
+        return getattr(module, class_name, None) is not None
+    except ImportError:
+        return False
