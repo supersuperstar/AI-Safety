@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.log
+FrontEnd
+BackEnd
+Model/Checkpoint
+DataSet/cifar10

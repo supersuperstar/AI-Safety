@@ -5,7 +5,7 @@ from Utils import *
 import logging
 
 
-class Attacker(metaclass=ABCMeta):
+class Attacker():
 
     loggerAttack = logging.getLogger("Attacker")
 
@@ -24,8 +24,8 @@ class Attacker(metaclass=ABCMeta):
             logging.warning(f'{method} method does not exist')
         return flag
 
-    def __init__(self, name, model=None, device=None, myLogger=loggerAttack, myLoggerLevel=LOGGING_LEVEL_DEBUG,
-                 myLoggerFormat=LOGGING_FORMAT, myLoggerPath=FILENAME_DEFAULT_LOG):
+    def __init__(self, name, isTarget=False, model=None, device=None, myLogger=loggerAttack,
+                 myLoggerLevel=LOGGING_LEVEL_DEBUG, myLoggerFormat=LOGGING_FORMAT, myLoggerPath=FILENAME_DEFAULT_LOG):
         """Initialize the attack method
 
         Args:
@@ -39,7 +39,12 @@ class Attacker(metaclass=ABCMeta):
         """
         self.model = model
         self.name = name
+        self.isTarget = isTarget
         self.device = device
+        self.numSamples = 0  # 总样本数
+        self.successSamples = 0  # 攻击成功样本数
+        self.skipSamples = 0  # 跳过样本数
+        self.defeatSamples = 0  # 攻击失败样本数
         #配置日志文件
         self.logger = myLogger
         #不是默认日志配置，新建独立日志配置

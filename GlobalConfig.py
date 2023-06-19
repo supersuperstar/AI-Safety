@@ -5,25 +5,31 @@ import logging
 #总目录
 PATH_PROJECT = os.path.dirname(os.path.abspath(__file__))
 #攻击方法目录
-PATH_ATTACK_METHOD = PATH_PROJECT + "Attack/"
+PATH_ATTACK_METHOD = PATH_PROJECT + "/Attack/"
 #防御方法目录
-PATH_DEFENSE_METHOD = PATH_PROJECT + "Defense/"
+PATH_DEFENSE_METHOD = PATH_PROJECT + "/Defense/"
 #评估方法目录
-PATH_EVALUATION_METHOD = PATH_PROJECT + "Evaluation/"
+PATH_EVALUATION_METHOD = PATH_PROJECT + "/Evaluation/"
+#检测方法目录
+PATH_DETECTION_METHOD = PATH_PROJECT + "/Detection/"
+#检测模型暂存目录
+PATH_DETECTION_MODEL_TEMP = PATH_DETECTION_METHOD + "/Temp/"
 #日志目录
-PATH_LOG = PATH_PROJECT + "Log/"
+PATH_LOG = PATH_PROJECT + "/Log/"
 #模型存放目录
-PATH_MODEL = PATH_PROJECT + "Model/"
+PATH_MODEL = PATH_PROJECT + "/Model/"
 #配置存放目录
-PATH_CONFIG_RELATIVE = "Config/" # 要注意配置是相对路径，需要加上上方对应的目录才会生效
+PATH_CONFIG_RELATIVE = "/Config/" # 要注意配置是相对路径，需要加上上方对应的目录才会生效
 #模型检查点目录
-PATH_MODEL_CHECKPOINT = PATH_MODEL + "Checkpoint/"
+PATH_MODEL_CHECKPOINT = PATH_MODEL + "/Checkpoint/"
 #模型类型定义存放目录
-PATH_MODEL_TYPE = PATH_MODEL + "ModelType/"
+PATH_MODEL_TYPE = PATH_MODEL + "/ModelType/"
 #用户模型定义存放目录
-PATH_USER_MODEL = PATH_MODEL + "UserModel/"
+PATH_USER_MODEL = PATH_MODEL + "/UserModel/"
 #默认日志文件名
-FILENAME_DEFAULT_LOG="DefaultLog.txt"
+FILENAME_DEFAULT_LOG="default.log"
+#cifar10数据集目录
+PATH_DATA_SET_CIFAR10 = PATH_PROJECT + "/DataSet/cifar10/"
 #包名
 MODEL_ATTACK="Attack."
 MODEL_DEFENSE="Defense."
